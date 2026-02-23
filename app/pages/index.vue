@@ -211,6 +211,11 @@ const scrollToTracks = async () => {
   if (!import.meta.client) return
   if (window.innerWidth >= 768) return
   tracksSection.value?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  if (tracksSection.value) {
+    const offset = 24
+    const top = tracksSection.value.getBoundingClientRect().top + window.scrollY - offset
+    window.scrollTo({ top, behavior: 'smooth' })
+  }
 }
 
 const onSelectCollection = (collection: CategoryTile) => {

@@ -1,7 +1,7 @@
 <template>
   <header class="flex w-full flex-col gap-2 text-xs tracking-[0.18em] text-[color:var(--ink-muted)]">
     <div class="flex items-start justify-between gap-6">
-      <p class="text-[11px] font-medium tracking-[0.22em] text-[color:var(--ink)]">Laudo</p>
+      <NuxtLink class="text-[11px] font-medium tracking-[0.22em] text-[color:var(--ink)]" to="/">Laudo</NuxtLink>
       <nav class="flex items-center gap-6 text-[10px]">
         <a class="transition hover:text-[color:var(--ink)]" href="#">Search</a>
         <button class="relative transition hover:text-[color:var(--ink)]" type="button" @click="cart.openCart">
