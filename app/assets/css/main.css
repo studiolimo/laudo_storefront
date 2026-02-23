@@ -127,7 +127,7 @@ body {
 .tile {
   position: relative;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 0;
   min-height: 120px;
   background: linear-gradient(135deg, #ddd 0%, #bbb 100%);
 }
@@ -172,6 +172,22 @@ body {
 
 .player-bar button {
   color: inherit;
+}
+
+.license-button {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+:root[data-theme='dark'] .license-button {
+  border-color: #5b7bff;
+  color: #dbe3ff;
+  background: rgba(91, 123, 255, 0.18);
+}
+
+:root[data-theme='dark'] .license-button:hover {
+  background: #5b7bff;
+  color: #ffffff;
 }
 
 .volume-slider {

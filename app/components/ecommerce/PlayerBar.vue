@@ -1,5 +1,9 @@
 <template>
-  <div v-if="player.currentTrack" class="player-bar fixed bottom-0 left-0 right-0">
+  <div
+    v-if="player.currentTrack"
+    class="player-bar fixed bottom-0 left-0 right-0"
+    :style="{ paddingBottom: `calc(env(safe-area-inset-bottom, 0px) + 8px)` }"
+  >
     <div class="mx-auto flex w-full max-w-5xl items-center gap-4 px-6 py-3 text-[11px] uppercase tracking-[0.16em] sm:px-10 lg:px-16">
       <div class="flex items-center gap-3">
         <div class="h-10 w-10 overflow-hidden rounded-lg bg-white/15">
@@ -13,7 +17,7 @@
         <div class="flex flex-col gap-1">
           <span class="font-medium">{{ title }}</span>
           <button
-            class="mt-1 h-1 w-32 overflow-hidden rounded-full bg-white/20 md:hidden"
+            class="mt-2 h-2 w-40 overflow-hidden rounded-full bg-white/20 md:hidden"
             type="button"
             @click="onWaveformClick"
           >

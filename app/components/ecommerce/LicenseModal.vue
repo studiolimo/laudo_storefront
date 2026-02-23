@@ -18,7 +18,7 @@
       <div
         v-for="group in groups"
         :key="group.type"
-        class="rounded-2xl bg-[color:var(--accent-soft)] px-4 py-3 text-[color:var(--ink)]"
+        class="rounded-none bg-[color:var(--accent-soft)] px-4 py-3 text-[color:var(--ink)]"
       >
         <button
           class="flex w-full items-center justify-between text-left text-[12px] font-semibold uppercase tracking-[0.14em]"
@@ -35,7 +35,7 @@
             <button
               v-for="variant in group.variants"
               :key="variant.id"
-              class="rounded-full border border-[color:var(--accent)] px-4 py-2 text-[11px] font-medium text-[color:var(--accent)] transition hover:bg-[color:var(--accent)] hover:text-white"
+              class="license-button rounded-full border border-[color:var(--accent)] px-4 py-2 text-[11px] font-medium text-[color:var(--accent)] transition hover:bg-[color:var(--accent)] hover:text-white"
               :class="{
                 'opacity-40 cursor-not-allowed': !variant.availableForSale,
                 'bg-[color:var(--accent)] text-white hover:bg-[color:var(--accent)]': cart.hasVariant(variant.id)

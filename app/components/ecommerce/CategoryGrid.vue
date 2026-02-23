@@ -2,10 +2,10 @@
   <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
     <article v-for="item in items" :key="item.id || item.label" class="flex flex-col gap-3">
       <button
-        class="tile shadow-[0_20px_45px_rgba(0,0,0,0.12)] aspect-[5/4] w-full text-left transition"
+        class="tile shadow-[0_20px_45px_rgba(0,0,0,0.12)] aspect-[5/4] w-full text-left transition rounded-none"
         :class="[
           item.tone,
-          item.id === selectedId ? 'ring-2 ring-[color:var(--accent)]' : 'hover:-translate-y-1'
+          item.id === selectedId ? 'ring-2 ring-[color:var(--accent)]' : ''
         ]"
         type="button"
         @click="emit('select', item)"

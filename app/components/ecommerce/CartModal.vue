@@ -12,7 +12,7 @@
       <div
         v-for="line in cart.lines"
         :key="line.id"
-        class="flex items-center justify-between rounded-2xl border border-[color:var(--line)] px-4 py-3"
+        class="flex items-center justify-between rounded-none border border-[color:var(--line)] px-4 py-3"
       >
         <div>
           <p class="text-[12px] font-semibold uppercase tracking-[0.14em] text-[color:var(--ink)]">

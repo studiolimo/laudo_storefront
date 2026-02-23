@@ -19,7 +19,7 @@
       </SectionTitle>
     </AppContainer>
 
-    <AppContainer class="mt-10">
+    <AppContainer class="mt-10" ref="tracksSection">
       <TrackTable
         :tracks="trackRows"
         :selected-id="selectedTrackId"
@@ -204,6 +204,15 @@ const onLicenseFromPlayer = () => {
   showLicenseModal.value = true
 }
 
+const tracksSection = ref<HTMLElement | null>(null)
+
+const scrollToTracks = async () => {
+  await nextTick()
+  if (!import.meta.client) return
+  if (window.innerWidth >= 768) return
+  tracksSection.value?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+}
+
 const onSelectCollection = (collection: CategoryTile) => {
   if (!collection.handle) return
   const nextHandle = selectedCollectionHandle.value === collection.handle ? null : collection.handle
@@ -214,6 +223,9 @@ const onSelectCollection = (collection: CategoryTile) => {
       collection: nextHandle || undefined
     }
   })
+  if (nextHandle) {
+    scrollToTracks()
+  }
 }
 
 const closeLicenseModal = () => {
